@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import './App.css';
 import { Counter, Loader, CounterLabel } from './components';
 import { fetchCounter, putCounter } from './apis';
+import { networkQueuer } from './utils';
 
 const App = () => {
   const [value, dispatchSetCount] = useState(1);
@@ -37,16 +38,24 @@ const App = () => {
     syncValue();
   }, [syncValue]);
 
+  const onFinishLoading = useCallback(() => {
+    dispatchEndLoader();
+  }, [dispatchEndLoader]);
+
+  useEffect(() => {
+    networkQueuer.addCallbackMethod(onFinishLoading);
+  }, [onFinishLoading]);
+
   const uploadValue = async (value) => {
-    try {
-      dispatchStartLoader();
-      const res = await putCounter(value);
-      dispatchSetFetchedCount(res['amati'] || 1);
-      dispatchEndLoader();
-    } catch (e) {
-      dispatchEndLoader();
-      console.log(e);
-    }
+    dispatchStartLoader();
+    const onSuccess = (res) => {
+      dispatchSetFetchedCount(res['amati'] ?? 1);
+      // dispatchEndLoader();
+    };
+    const onFailure = () => {
+      // dispatchEndLoader();
+    };
+    networkQueuer.addRequest(putCounter(value), onSuccess, onFailure);
   };
 
   const handleChange = (newValue) => {
