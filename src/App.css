@@ -4,6 +4,7 @@
   --counter-item-height: 56px;
   --white: #ffffff;
   --primary-light: #fbe8e8;
+  --loader-size: 25px;
 }
 * {
   padding: 0;
@@ -11,7 +12,14 @@
 }
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 90vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
 }

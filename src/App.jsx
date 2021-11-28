@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
-import { Counter } from './components';
+import { Counter, Loader, CounterLabel } from './components';
 
 const App = () => {
   return (
     <div className='App'>
-      <Counter value={10} />
+      <div className='container'>
+        <Loader isLoading />
+        <Counter value={10} />
+        <CounterLabel value={10} />
+      </div>
     </div>
   );
 };
