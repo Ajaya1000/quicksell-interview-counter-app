@@ -1,0 +1,50 @@
+.counterContainer {
+  display: flex;
+  flex-direction: row;
+  border: 0px solid var(--primary);
+  border-radius: 8px;
+  width: fit-content;
+}
+.counterItem {
+  width: var(--counter-item-width);
+  height: var(--counter-item-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.counterItem:nth-child(1) {
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: var(--primary);
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: var(--white);
+}
+.counterItem:nth-child(2) {
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: var(--primary);
+  background-color: var(--primary-light);
+}
+.counterItem:nth-child(3) {
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: var(--primary);
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: var(--primary);
+}
+.counterItemText {
+  font-size: 21px;
+  font-weight: 900;
+}
+.counterItem:nth-child(1) .counterItemText {
+  color: var(--primary);
+}
+.counterItem:nth-child(2) .counterItemText {
+  color: var(--primary);
+}
+.counterItem:nth-child(3) .counterItemText {
+  color: var(--white);
+}

@@ -1,10 +1,12 @@
 import React from 'react';
-import { COUNT_ACTIONS } from './constants';
+import './App.css';
+import { Counter } from './components';
+
 const App = () => {
   return (
-    <>
-      <h1>Hii</h1>
-    </>
+    <div className='App'>
+      <Counter value={10} />
+    </div>
   );
 };
 export default App;

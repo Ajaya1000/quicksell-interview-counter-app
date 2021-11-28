@@ -1,0 +1,17 @@
+:root {
+  --primary: #b24242;
+  --counter-item-width: 60px;
+  --counter-item-height: 56px;
+  --white: #ffffff;
+  --primary-light: #fbe8e8;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
