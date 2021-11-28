@@ -50,8 +50,6 @@ const App = () => {
   };
 
   const handleChange = (newValue) => {
-    console.log('inside Change', newValue);
-
     let res = parseInt(newValue || 0);
     const MAX_VALUE = process.env.MAX_VALUE || 1000;
     if (res > MAX_VALUE) return;
