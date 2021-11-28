@@ -9,9 +9,6 @@
 .counterItem {
   width: var(--counter-item-width);
   height: var(--counter-item-height);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
 }
 .counterItem:nth-child(1) {
@@ -43,9 +40,26 @@
 .counterItem:nth-child(1) .counterItemText {
   color: var(--primary);
 }
-.counterItem:nth-child(2) .counterItemText {
-  color: var(--primary);
-}
 .counterItem:nth-child(3) .counterItemText {
   color: var(--white);
+}
+
+.counterButton {
+  all: unset;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.counterInput {
+  all: unset;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  color: var(--primary);
+  font-size: 21px;
+  font-weight: 900;
+  text-align: center;
 }
