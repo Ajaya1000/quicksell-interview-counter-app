@@ -1,1 +1,1 @@
-export { COUNT_ACTIONS } from './actionTypes';
+export { endPoint, URL } from './apiConstants';

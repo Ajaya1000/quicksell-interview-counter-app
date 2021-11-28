@@ -1,10 +1,15 @@
 import React from 'react';
 import styles from './index.module.css';
-export const Counter = ({ value, onIncrement, onDecrement, onChange }) => {
+export const Counter = ({ value, onChange }) => {
   return (
     <div className={styles.counterContainer}>
       <div className={styles.counterItem}>
-        <button className={styles.counterButton} onClick={onIncrement}>
+        <button
+          className={styles.counterButton}
+          onClick={() => {
+            onChange(value - 1);
+          }}
+        >
           <span className={styles.counterItemText}>-</span>
         </button>
       </div>
@@ -12,11 +17,18 @@ export const Counter = ({ value, onIncrement, onDecrement, onChange }) => {
         <input
           className={styles.counterInput}
           value={value}
-          onChange={(e) => onChange(e.target.value)}
+          onChange={(e) => {
+            onChange(e.target.value);
+          }}
         />
       </div>
       <div className={styles.counterItem}>
-        <button className={styles.counterButton} onClick={onDecrement}>
+        <button
+          className={styles.counterButton}
+          onClick={() => {
+            onChange(value - 1 + 2);
+          }}
+        >
           <span className={styles.counterItemText}>+</span>
         </button>
       </div>
